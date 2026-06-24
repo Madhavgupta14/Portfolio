@@ -172,7 +172,8 @@ body::before {
 #hero-badge   { animation: hero-in 0.45s ease both; }
 #hero-heading { animation: hero-in 0.55s 0.08s ease both; }
 #hero-sub     { animation: hero-in 0.5s 0.16s ease both; }
-#hero-cta     { animation: hero-in 0.45s 0.24s ease both; }
+#hero-meta    { animation: hero-in 0.48s 0.22s ease both; }
+#hero-cta     { animation: hero-in 0.45s 0.3s ease both; }
 #hero-email   { animation: hero-in 0.4s 0.32s ease both; }
 #hero-photo   {
   animation:
@@ -277,7 +278,7 @@ section {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 50px;
+  padding: 20px 70px;
   position: relative;
   z-index: 1;
 }
@@ -288,7 +289,7 @@ section {
 
 .container {
   position: relative;
-  width: calc(100% - 100px);
+  width: calc(100% - 50px);
   min-height: calc(100vh - 280px);
   background: rgba(255, 255, 255, 0.025);
   box-shadow:
@@ -302,7 +303,7 @@ section {
   flex-direction: column;
   align-items: center;
   padding: 50px;
-  margin-top: 60px;
+  margin-top: 28px;
 }
 
 @media (max-width: 1100px) {
@@ -345,7 +346,7 @@ section {
       0 4px 32px rgba(0,0,0,0.4),
       inset 0 1px 0 rgba(255,255,255,0.06);
     z-index: 90;
-    width: calc(100% - 100px);
+    width: calc(100% - 70px);
     transition: background var(--dur) var(--ease);
   }
 
@@ -663,6 +664,99 @@ header ul li a.active {
   height: 0.85rem;
 }
 
+/* Hero credential chips */
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-family: var(--font-b);
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.2;
+  transition: background var(--dur) var(--ease),
+              border-color var(--dur) var(--ease),
+              color var(--dur) var(--ease);
+}
+
+.hero-chip:hover {
+  background: rgba(124,58,237,0.1);
+  border-color: rgba(124,58,237,0.3);
+  color: var(--text);
+}
+
+/* Headline role chip — accented */
+.hero-chip-accent {
+  background: rgba(124,58,237,0.14);
+  border-color: rgba(124,58,237,0.35);
+  color: #c4b5fd;
+  font-weight: 600;
+}
+
+.hero-chip-accent:hover {
+  background: rgba(124,58,237,0.2);
+  border-color: rgba(124,58,237,0.5);
+  color: #ddd6fe;
+}
+
+/* Standout achievement chip — gold/award accent */
+.hero-chip-award {
+  background: rgba(245,158,11,0.13);
+  border-color: rgba(245,158,11,0.4);
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+.hero-chip-award:hover {
+  background: rgba(245,158,11,0.2);
+  border-color: rgba(245,158,11,0.6);
+  color: #fcd34d;
+}
+
+/* Amazon ML Summer School — cyan accent */
+.hero-chip-cyan {
+  background: rgba(6,182,212,0.12);
+  border-color: rgba(6,182,212,0.38);
+  color: #67e8f9;
+  font-weight: 600;
+}
+
+.hero-chip-cyan:hover {
+  background: rgba(6,182,212,0.2);
+  border-color: rgba(6,182,212,0.6);
+  color: #a5f3fc;
+}
+
+/* Specialty chip — pink accent (echoes the logo gradient) */
+.hero-chip-pink {
+  background: rgba(236,72,153,0.12);
+  border-color: rgba(236,72,153,0.38);
+  color: #f9a8d4;
+  font-weight: 600;
+}
+
+.hero-chip-pink:hover {
+  background: rgba(236,72,153,0.2);
+  border-color: rgba(236,72,153,0.6);
+  color: #fbcfe8;
+}
+
+.hero-chip-emoji {
+  font-size: 0.92em;
+  line-height: 1;
+}
+
 /* ============================================================
    HERO IMAGE
    ============================================================ */
@@ -674,6 +768,23 @@ header ul li a.active {
 
 @media (max-width: 1100px) {
   .img img:not(.shape) { display: none; }
+}
+
+/* Hero photo: hard fade on the right edge so it bleeds into the page */
+#hero-photo {
+  -webkit-mask-image: linear-gradient(to right, #000 64%, transparent 88%);
+          mask-image: linear-gradient(to right, #000 64%, transparent 88%);
+}
+
+/* Photo emerges from the panel's right edge and bleeds out (desktop only) */
+@media (min-width: 1101px) {
+  #hero-col { min-width: 0; }          /* let the text shrink instead of overflowing */
+  #hero-img {
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 2;
+    margin-right: -120px;              /* pull photo onto the panel edge + bleed out */
+  }
 }
 
 /* ============================================================
@@ -984,35 +1095,65 @@ header ul li a.active {
   margin-bottom: 1rem;
 }
 
-/* Project logo */
+/* Project logo — clean white "brand chip", uniform size for every logo */
 .project-logo {
-  height: 44px;
-  width: auto;
-  min-width: 80px;
-  max-width: 200px;
+  height: 58px;
+  width: 172px;
   object-fit: contain;
+  object-position: center;
   margin-bottom: 1.1rem;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.05);
-  padding: 8px 16px;
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-  transition: transform var(--dur) var(--ease-spring);
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 10px 18px;
+  border: 1px solid rgba(255,255,255,0.65);
+  /* 3D depth: top bevel highlight + layered drop shadow */
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.9),
+    0 6px 14px rgba(0,0,0,0.32),
+    0 16px 36px rgba(0,0,0,0.22);
+  /* slow float (like the hero photo, but gentler) */
+  animation: logo-float 6s var(--ease) infinite alternate;
+  will-change: transform;
+  transition: box-shadow var(--dur) var(--ease), filter var(--dur) var(--ease);
 }
 
-.project-logo:hover { transform: scale(1.04); }
+.project-logo:hover {
+  filter: brightness(1.04);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.9),
+    0 10px 22px rgba(0,0,0,0.40),
+    0 22px 48px rgba(124,58,237,0.18);
+}
 
-/* Featured project logo */
+/* Featured project logo (ColdBars) — 3D depth + slow float */
 .featured-project-logo {
   width: 120px;
   height: 120px;
   object-fit: cover;
   border-radius: var(--r);
-  box-shadow: 0 10px 40px rgba(124,58,237,0.3);
-  border: 1px solid rgba(124,58,237,0.2);
+  box-shadow:
+    0 14px 40px rgba(124,58,237,0.35),
+    0 26px 60px rgba(0,0,0,0.40),
+    inset 0 1px 0 rgba(255,255,255,0.12);
+  border: 1px solid rgba(124,58,237,0.25);
   flex-shrink: 0;
   margin-top: 0;
+  animation: logo-float 5.5s var(--ease) infinite alternate;
+  will-change: transform;
 }
+
+/* Slow floating bob shared by all project logos */
+@keyframes logo-float {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-8px); }
+}
+
+/* Stagger the grid logos so they don't bob in unison */
+#projects-grid .project-card:nth-child(2) .project-logo { animation-delay: -1.5s; }
+#projects-grid .project-card:nth-child(3) .project-logo { animation-delay: -3s; }
+#projects-grid .project-card:nth-child(4) .project-logo { animation-delay: -0.8s; }
+#projects-grid .project-card:nth-child(5) .project-logo { animation-delay: -2.3s; }
+#projects-grid .project-card:nth-child(6) .project-logo { animation-delay: -3.7s; }
 
 @media (max-width: 600px) {
   .featured-project-logo { width: 72px; height: 72px; }
@@ -1080,6 +1221,9 @@ header ul li a.active {
 }
 
 .badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: rgba(34,197,94,0.1);
   color: #4ade80;
   font-family: var(--font-b);
@@ -1090,6 +1234,56 @@ header ul li a.active {
   letter-spacing: 0.1em;
   border: 1px solid rgba(34,197,94,0.25);
   text-transform: uppercase;
+}
+
+/* Blinking "live" dot — signals a deployed / live project */
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22C55E;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 0 rgba(34,197,94,0.6);
+  animation: live-pulse 1.6s ease-out infinite;
+}
+
+@keyframes live-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.55); }
+  70%  { box-shadow: 0 0 0 7px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
+
+/* Deployed-project live link pill */
+.live-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-bottom: 1rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(34,197,94,0.1);
+  border: 1px solid rgba(34,197,94,0.3);
+  color: #4ade80;
+  font-family: var(--font-b);
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--dur) var(--ease),
+              border-color var(--dur) var(--ease),
+              transform var(--dur) var(--ease);
+}
+
+.live-link:hover {
+  background: rgba(34,197,94,0.18);
+  border-color: rgba(34,197,94,0.55);
+  transform: translateY(-1px);
+}
+
+.live-link svg {
+  width: 13px;
+  height: 13px;
+  opacity: 0.85;
 }
 
 /* ============================================================
@@ -1147,7 +1341,7 @@ header ul li a.active {
   background: linear-gradient(135deg, #141e30 0%, #243b55 100%);
 }
 .banner-nokia {
-  background: linear-gradient(135deg, #005AFF 0%, #00d2FF 100%);
+  background: linear-gradient(135deg, #0a2126 0%, #123043 50%, #124561 100%);
 }
 
 .experience-banner {
@@ -1198,6 +1392,27 @@ header ul li a.active {
   background: #fff;
   border: 2px solid rgba(255,255,255,0.15);
   padding: 0.5rem;
+  transition:
+    width var(--dur-lg) var(--ease-spring),
+    height var(--dur-lg) var(--ease-spring),
+    top var(--dur-lg) var(--ease-spring),
+    padding var(--dur-lg) var(--ease),
+    border-radius var(--dur-lg) var(--ease),
+    border-color var(--dur) var(--ease),
+    box-shadow var(--dur-lg) var(--ease);
+}
+
+/* Hover: the logo grows to fill the banner, bringing its mark + name
+   large and centred into the middle of the logo section. */
+.experience-card:hover .company-initials {
+  width: 100%;
+  height: 11rem;
+  top: 0;
+  padding: 1.1rem 1rem;
+  border-radius: var(--r) var(--r) 0 0;
+  border-color: transparent;
+  object-fit: contain !important;   /* show the full logo (overrides inline cover) */
+  box-shadow: 0 14px 34px rgba(0,0,0,0.45);
 }
 
 .experience-text-details {

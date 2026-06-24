@@ -53,26 +53,7 @@
            ================================================ -->
       <header>
         <a href="#top" class="logo" aria-label="Home — Madhav">
-          <svg class="logo-mark" viewBox="0 0 58 48" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#22d3ee"/>
-                <stop offset="45%" stop-color="#6366f1"/>
-                <stop offset="100%" stop-color="#ec4899"/>
-              </linearGradient>
-              <filter id="logo-glow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="1.2" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
-            <!-- M mark from shared logo -->
-            <path d="M6 42V6l14 22 14-22v36" fill="none" stroke="url(#logo-grad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#logo-glow)"/>
-            <line x1="44" y1="6" x2="44" y2="34" stroke="url(#logo-grad)" stroke-width="4.5" stroke-linecap="round" filter="url(#logo-glow)"/>
-            <circle cx="44" cy="42" r="3.2" fill="url(#logo-grad)" filter="url(#logo-glow)"/>
-          </svg>
+          <img src="./assets/logo-mark.png" class="logo-mark" alt="Madhav logo" width="38" height="38" decoding="async" />
           <span class="logo-text">Madhav</span>
         </a>
         <ul role="list">
@@ -91,9 +72,6 @@
            ================================================ -->
       <div class="content">
         <div class="column" id="hero-col">
-          <!-- Availability badge -->
-          <div class="hero-available" id="hero-badge">Available for AI roles</div>
-
           <!-- Main heading -->
           <h2 id="hero-heading">
             Hi, I'm <span class="name-gradient">Madhav</span><span class="wave" aria-hidden="true">👋</span>
@@ -103,11 +81,18 @@
           <p id="hero-sub">
             I'm an AI Engineer building systems that orchestrate other AI systems.
             From multi-agent workflows to LLM-powered automation and multimodal pipelines, I design structured,
-            production-ready intelligence that <em>executes</em> — not just responds.
-            <br><br>
-            <strong>AI Engineer (Full-time)</strong> &nbsp;·&nbsp; SIH '23 🏆 2nd Rank &nbsp;·&nbsp;
-            Amazon ML Summer School '23 &nbsp;·&nbsp; Full Stack &nbsp;·&nbsp; B.E. Computer Engineering @Thapar '2025
+            production-ready intelligence that executes, not just responds.
           </p>
+
+          <!-- Credentials -->
+          <div class="hero-meta" id="hero-meta">
+            <span class="hero-chip hero-chip-accent">AI Engineer · Full-time</span>
+            <span class="hero-chip">Agentic AI</span>
+            <span class="hero-chip hero-chip-award"><span class="hero-chip-emoji">🏆</span> SIH '23 · 2nd Rank</span>
+            <span class="hero-chip">Amazon ML Summer School '23</span>
+            <span class="hero-chip">Full Stack</span>
+            <span class="hero-chip">B.E. Computer Engineering · Thapar '25</span>
+          </div>
 
           <!-- CTAs -->
           <div id="hero-cta">
@@ -250,16 +235,16 @@
           <div class="featured-card-intro">
             <div class="featured-badges">
               <span class="badge-featured">Featured Project</span>
-              <span class="badge-live">Live on YouTube</span>
+              <span class="badge-live"><span class="live-dot"></span>Live on YouTube</span>
             </div>
             <h3 class="featured-title">ColdBars</h3>
           </div>
         </div>
         <p class="featured-desc">
-          A fully AI-powered YouTube music channel — no studio, no editing team, no budget.
+          A fully AI-powered YouTube music channel. No studio. No editing team. No budget.
           Built an end-to-end n8n workflow that <strong>generates lyrics via OpenAI</strong>,
           <strong>produces full songs using Suno</strong>, creates cinematic AI lip-sync shorts,
-          and publishes complete 4K music drops — fully automated. Just AI systems orchestrating other AI systems.
+          and publishes complete 4K music drops - fully automated. Just AI systems orchestrating other AI systems.
         </p>
         <div class="featured-tags">
           <span class="tag-chip">n8n</span>
@@ -303,9 +288,12 @@
           <p>
             Built a healthcare website with HTML, CSS &amp; JS integrating WhatsApp and Google Forms for client
             engagement. Enhanced visibility through SEO optimization, CDN integration, and minified assets.
-            Live at <a href="https://aboutnutrition.co.in" target="_blank" rel="noopener"
-              style="color:var(--cyan);text-decoration:none">aboutnutrition.co.in</a>.
           </p>
+          <a href="https://aboutnutrition.co.in" target="_blank" rel="noopener" class="live-link">
+            <span class="live-dot"></span>
+            aboutnutrition.co.in
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          </a>
           <div style="display:flex;flex-wrap:wrap;gap:0.4rem">
             <span class="tag-chip">HTML/CSS/JS</span>
             <span class="tag-chip">SEO</span>
@@ -321,7 +309,7 @@
           <p>
             Designed a UI to project river flood inundation extents from level forecasts. Used Sentinel-2
             satellite imagery on Google Earth Engine to map inundation areas. Applied Random Forest
-            for flood forecasting achieving <strong style="color:#4ade80">98% accuracy</strong>.
+            for flood forecasting achieving <strong style="color:#CE2029">98% accuracy</strong>.
           </p>
           <div style="display:flex;flex-wrap:wrap;gap:0.4rem">
             <span class="tag-chip">Python</span>
@@ -338,7 +326,7 @@
           <p>
             Built an automated system for analyzing second-hand car prices using image and audio similarity
             for <strong>TVS Credit</strong>. Compared images via SSIM/ORB and audio with AcoustID fingerprints.
-            Optimized using <strong style="color:#4ade80">XGBoost</strong> for <strong style="color:#4ade80">95% accuracy</strong>.
+            Optimized using XGBoost for <strong style="color:#CE2029">95% accuracy</strong>.
           </p>
           <div style="display:flex;flex-wrap:wrap;gap:0.4rem">
             <span class="tag-chip">XGBoost</span>
@@ -373,9 +361,12 @@
             An immersive <strong>3D Solar System simulation</strong> combining high-fidelity rendering with space-age UI.
             Integrated <strong>Computer Vision</strong> for real-time hand gesture controls, letting users navigate
             celestial bodies hands-free.
-            Live at <a href="https://madhavgupta14.github.io/GestureGalaxy/" target="_blank" rel="noopener"
-              style="color:var(--cyan);text-decoration:none">GestureGalaxy</a>.
           </p>
+          <a href="https://madhavgupta14.github.io/GestureGalaxy/" target="_blank" rel="noopener" class="live-link">
+            <span class="live-dot"></span>
+            Try It Live
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          </a>
           <div style="display:flex;flex-wrap:wrap;gap:0.4rem">
             <span class="tag-chip">Three.js</span>
             <span class="tag-chip">Mediapipe</span>
@@ -402,7 +393,7 @@
             <div class="experience-blurred_div"></div>
             <div class="experience-div-company">
               <img src="assets/TestingXperts_Logo.jpg" class="company-initials"
-                alt="TestingXperts" style="object-fit:cover" width="104" height="104" loading="lazy" decoding="async" />
+                alt="TestingXperts" style="object-fit:contain" width="104" height="104" loading="lazy" decoding="async" />
             </div>
           </div>
           <div class="experience-text-details">
@@ -463,8 +454,8 @@
           <div class="experience-banner banner-nokia">
             <div class="experience-blurred_div"></div>
             <div class="experience-div-company">
-              <img src="assets/Nokia.jpg" class="company-initials"
-                alt="Nokia" style="object-fit:cover" width="104" height="104" loading="lazy" decoding="async" />
+              <img src="assets/Nokia_Siemens_Networks.svg.png" class="company-initials"
+                alt="Nokia Siemens Networks" style="object-fit:contain" width="104" height="104" loading="lazy" decoding="async" />
             </div>
           </div>
           <div class="experience-text-details">
