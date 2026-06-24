@@ -1,6 +1,24 @@
 (function () {
   'use strict';
 
+  /* Cursor spotlight — follows the mouse and lightens the area around it */
+  var glow = document.querySelector('.cursor-glow');
+  if (glow && window.matchMedia('(hover: hover)').matches) {
+    var gx = -1000, gy = -1000, gTick = false;
+    var moveGlow = function () {
+      glow.style.transform = 'translate3d(' + (gx - 60) + 'px,' + (gy - 60) + 'px,0)';
+      gTick = false;
+    };
+    window.addEventListener('pointermove', function (e) {
+      if (e.pointerType === 'touch') return;
+      gx = e.clientX;
+      gy = e.clientY;
+      if (!glow.classList.contains('is-active')) glow.classList.add('is-active');
+      if (!gTick) { requestAnimationFrame(moveGlow); gTick = true; }
+    }, { passive: true });
+    document.addEventListener('mouseleave', function () { glow.classList.remove('is-active'); });
+  }
+
   /* Scroll-to-top button */
   var scrollBtn = document.getElementById('myDIV');
   if (scrollBtn) {

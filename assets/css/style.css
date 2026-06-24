@@ -98,6 +98,34 @@ body::before {
   overflow: hidden;
 }
 
+/* Cursor spotlight — lightens the area around the pointer */
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 3;
+  background: radial-gradient(circle,
+    rgba(165,150,255,0.07) 0%,
+    rgba(80,200,230,0.03) 38%,
+    transparent 74%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+  transform: translate3d(-1000px, -1000px, 0);
+  will-change: transform;
+}
+
+.cursor-glow.is-active { opacity: 1; }
+
+/* No mouse (touch) or reduced-motion: disable */
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .cursor-glow { display: none; }
+}
+
 .orb {
   position: absolute;
   border-radius: 50%;
