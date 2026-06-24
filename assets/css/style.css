@@ -1204,6 +1204,33 @@ header ul li a.active {
   box-shadow: 0 8px 30px rgba(255,0,0,0.45);
 }
 
+/* Live-demo button (featured projects) */
+.btn-demo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  background: linear-gradient(135deg, #4285F4 0%, #1A73E8 100%);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-family: var(--font-b);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(66,133,244,0.5);
+  box-shadow: 0 4px 20px rgba(66,133,244,0.38);
+  transition: all var(--dur) var(--ease);
+}
+
+.btn-demo svg { width: 1.05rem; height: 1.05rem; }
+
+.btn-demo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(66,133,244,0.55), 0 0 0 1px rgba(66,133,244,0.4);
+}
+
 /* ============================================================
    BADGE CHIPS (FEATURED / LIVE)
    ============================================================ */
