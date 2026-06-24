@@ -5,8 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio - Madhav Gupta</title>
-
+  <title>Portfolio — Madhav Gupta · AI Engineer</title>
 
   <!-- Favicons -->
   <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
@@ -16,240 +15,132 @@
   <link rel="manifest" href="./assets/site.webmanifest" />
 
   <meta name="author" content="Madhav Gupta" />
-  <meta name="description"
-    content="Developer Portfolio of Madhav Gupta — AI Engineer, Full Stack Developer, ECE Graduate from Thapar." />
-  <meta name="keywords"
-    content="Developer, Portfolio, HTML, CSS, JS, Madhav, Madhav Gupta, AI Engineer, Full Stack, Thapar" />
-
+  <meta name="description" content="Developer Portfolio of Madhav Gupta — AI Engineer, Full Stack Developer, ECE Graduate from Thapar." />
+  <meta name="keywords" content="Developer, Portfolio, HTML, CSS, JS, Madhav, Madhav Gupta, AI Engineer, Full Stack, Thapar" />
   <meta name="referrer" content="no-referrer-when-downgrade" />
 
-
-  <link rel="stylesheet" href="./assets/css/all.min.css" />
+  <!-- Critical CSS only -->
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <script defer src="./assets/js/all.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
-  <script src="./assets/js/repo-card.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <!--Animation-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <style>
-    /* Extra styles for Madhav's experience card banners */
-    .banner-testingxperts {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    }
-
-    .banner-netsmartz {
-      background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-    }
-
-    .banner-krysna {
-      background: linear-gradient(135deg, #141e30 0%, #243b55 100%);
-    }
-
-    .banner-nokia {
-      background: linear-gradient(135deg, #005AFF 0%, #00d2FF 100%);
-    }
-
-    /* Company logo styling */
-    .company-initials {
-      width: 6.5rem;
-      height: 6.5rem;
-      border-radius: 50%;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 7rem;
-      margin-left: auto;
-      margin-right: auto;
-      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.4);
-      background: #fff;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      padding: 0.6rem;
-    }
-
-
-    /* Achievement cards */
-    .achievements-div {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-      margin-top: 25px;
-    }
-
-    .certifications-div {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 25px;
-    }
-
-    @media (max-width: 900px) {
-      .certifications-div {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .certifications-div {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .achievement-card {
-      box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.05);
-      border-radius: 1rem;
-      backdrop-filter: blur(1rem);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-top: 1px solid rgba(255, 255, 255, 0.5);
-      border-left: 1px solid rgba(255, 255, 255, 0.5);
-      padding: 1.4rem 1.6rem;
-      transition: 0.3s ease;
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-
-    .achievement-card:hover {
-      background: rgba(255, 255, 255, 0.5);
-      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
-    }
-
-    .achievement-icon {
-      font-size: 2rem;
-      line-height: 1;
-      flex-shrink: 0;
-    }
-
-    .achievement-text h4 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #222;
-      margin-bottom: 0.2rem;
-    }
-
-    .achievement-text p {
-      font-size: 0.85rem;
-      color: #666;
-      line-height: 1.4;
-    }
-
-    /* Project logo styling - Landscape for better readability */
-    .project-logo {
-      height: 48px;
-      width: auto;
-      min-width: 80px;
-      max-width: 210px;
-      object-fit: contain;
-      margin-bottom: 1.2rem;
-      border-radius: 10px;
-      background: #fff;
-      padding: 8px 20px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease;
-    }
-
-    .project-logo:hover {
-      transform: scale(1.05);
-    }
-
-    /* Featured Project Logo */
-    .featured-project-logo {
-      width: 130px;
-      height: 130px;
-      object-fit: cover;
-      border-radius: 1.2rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      flex-shrink: 0;
-      margin-top: -50px;
-      /* Pulls the logo upwards */
-    }
-
-    @media (max-width: 600px) {
-      .featured-project-logo {
-        width: 80px;
-        height: 80px;
-      }
-    }
-  </style>
+  <!-- Fonts + devicons: non-blocking -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500&display=swap"
+    media="print" onload="this.media='all'">
+  <!-- devicon: loaded normally so icons paint on first render -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500&display=swap">
+  </noscript>
 </head>
 
 <body>
 
+  <!-- Background canvas: gradient orbs -->
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
   <section>
     <div class="container">
       <div id="top" class="page-scroll"></div>
-      <!-- Navbar -->
+
+      <!-- ================================================
+           NAVBAR
+           ================================================ -->
       <header>
-        <a href="#top" class="logo"><img src="./assets/logo.png" alt="Madhav - AI Engineer" /></a>
-        <ul>
+        <a href="#top" class="logo" aria-label="Home — Madhav">
+          <svg class="logo-mark" viewBox="0 0 58 48" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#22d3ee"/>
+                <stop offset="45%" stop-color="#6366f1"/>
+                <stop offset="100%" stop-color="#ec4899"/>
+              </linearGradient>
+              <filter id="logo-glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="1.2" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <!-- M mark from shared logo -->
+            <path d="M6 42V6l14 22 14-22v36" fill="none" stroke="url(#logo-grad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#logo-glow)"/>
+            <line x1="44" y1="6" x2="44" y2="34" stroke="url(#logo-grad)" stroke-width="4.5" stroke-linecap="round" filter="url(#logo-glow)"/>
+            <circle cx="44" cy="42" r="3.2" fill="url(#logo-grad)" filter="url(#logo-glow)"/>
+          </svg>
+          <span class="logo-text">Madhav</span>
+        </a>
+        <ul role="list">
           <li><a class="active page" href="#top" id="home-btn">Home</a></li>
-          <li><a href="#about" class="page" id="about-btn">About Me</a></li>
+          <li><a href="#about" class="page" id="about-btn">About</a></li>
           <li><a href="#projects" class="page" id="project-btn">Projects</a></li>
           <li><a href="#experience" class="page" id="experience-btn">Experience</a></li>
           <li><a href="#achievements" class="page" id="achievements-btn">Achievements</a></li>
           <li><a href="#certifications" class="page" id="certifications-btn">Certifications</a></li>
-          <li>
-            <a href="#contact" class="enabledisable page" id="contact-btn">Contact</a>
-          </li>
+          <li><a href="#contact" class="enabledisable page" id="contact-btn">Contact</a></li>
         </ul>
       </header>
 
-      <!-- Main Content -->
+      <!-- ================================================
+           HERO SECTION
+           ================================================ -->
       <div class="content">
-        <div class="column">
-          <h2 data-aos="fade-down" data-aos-duration="1000">Hi all, I'm Madhav<span class="wave">👋</span></h2>
-          <p data-aos="fade-right" data-aos-duration="1000">
-            I’m Madhav - an AI Engineer building systems that orchestrate other AI systems.
-            From multi-agent workflows to LLM powered automation and multimodal pipelines, I design structured,
-            production ready intelligence that executes - not just responds.
-            <br><b>
-              AI Engineer (Full-time) &nbsp;||&nbsp; SIH '23 🏆 2nd Rank &nbsp;||&nbsp;
-              Amazon ML Summer School '23 &nbsp;||&nbsp; Full Stack &nbsp;||&nbsp; B.E. Computer
-              Engineering @Thapar '2025
-            </b>
+        <div class="column" id="hero-col">
+          <!-- Availability badge -->
+          <div class="hero-available" id="hero-badge">Available for AI roles</div>
+
+          <!-- Main heading -->
+          <h2 id="hero-heading">
+            Hi, I'm <span class="name-gradient">Madhav</span><span class="wave" aria-hidden="true">👋</span>
+          </h2>
+
+          <!-- Subtitle -->
+          <p id="hero-sub">
+            I'm an AI Engineer building systems that orchestrate other AI systems.
+            From multi-agent workflows to LLM-powered automation and multimodal pipelines, I design structured,
+            production-ready intelligence that <em>executes</em> — not just responds.
+            <br><br>
+            <strong>AI Engineer (Full-time)</strong> &nbsp;·&nbsp; SIH '23 🏆 2nd Rank &nbsp;·&nbsp;
+            Amazon ML Summer School '23 &nbsp;·&nbsp; Full Stack &nbsp;·&nbsp; B.E. Computer Engineering @Thapar '2025
           </p>
-          <a href="mailto:madhavgupta79r@gmail.com" data-aos="fade-right" data-aos-duration="1000">Contact Me</a>
-          <a href="https://drive.google.com/file/d/13PifN6sHabOW4dPGr9ISfSEzCCAP_eee/view?usp=sharing" target="_blank" data-aos="fade-right" data-aos-duration="1000">Resume</a>
-          <a href="mailto:madhavgupta79r@gmail.com" data-aos="fade-right" data-aos-duration="1000" style="display:inline-flex; align-items:center; gap:6px; font-size:0.95rem; color:#bbb; text-decoration:none; margin-top:0.65rem; background:none; padding:0; border:none; box-shadow:none; font-weight:500; letter-spacing:0.01em; transition: color 0.2s;" onmouseover="this.style.color='#fff';" onmouseout="this.style.color='#bbb';"><i class="fas fa-envelope" style="font-size:0.9rem; color:#7ec8e3;"></i>madhavgupta79r@gmail.com</a>
+
+          <!-- CTAs -->
+          <div id="hero-cta">
+            <a href="mailto:madhavgupta79r@gmail.com" class="btn-primary">Contact Me</a>
+            <a href="https://drive.google.com/file/d/13PifN6sHabOW4dPGr9ISfSEzCCAP_eee/view?usp=sharing"
+              target="_blank" rel="noopener" class="btn-secondary">Resume</a>
+          </div>
+
+          <!-- Email link -->
+          <a href="mailto:madhavgupta79r@gmail.com" class="hero-email" id="hero-email">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            madhavgupta79r@gmail.com
+          </a>
         </div>
-        <div class="img">
-          <img src="./assets/Vector 10.png" class="shape" style="top: 5rem; right: 15rem" alt="Vector 10"
-            data-aos="fade-up-right" data-aos-duration="1000" />
-          <img src="./assets/Vector 11.png" class="shape" style="height: 8rem; width: 8rem; top: 8rem; right: 20rem"
-            alt="Vector 11" data-aos="fade-up-right" data-aos-duration="1000" />
-          <img src="./assets/Vector 16.png" class="shape" style="height: 8rem; width: 8rem; top: 8rem; right: 15rem"
-            alt="Vector 16" data-aos="fade-up-right" data-aos-duration="1000" />
-          <img src="./assets/Vector 10.png" class="shape" style="z-index: 1; top: 23rem; right: 9rem" alt="Vector 10"
-            data-aos="fade-up-right" data-aos-duration="1000" />
-          <img src="./assets/Vector 27.png" class="shape" style="
-                z-index: 1;
-                height: 8rem;
-                width: 8rem;
-                top: 25rem;
-                right: 13rem;
-              " alt="Vector 27" data-aos="fade-up-right" data-aos-duration="1000" />
-          <img src="./assets/Vector 11.png" class="shape" style="
-                z-index: 1;
-                height: 4rem;
-                width: 4rem;
-                top: 26rem;
-                right: 9rem;
-              " alt="Vector 11" data-aos="fade-up-right" data-aos-duration="1000" />
-          <img src="./assets/Madhav.png" alt="Madhav Gupta" data-aos="fade-up-right" data-aos-duration="1000" />
+
+        <!-- Hero illustration (CSS blobs replace decorative PNG shapes) -->
+        <div class="img" aria-hidden="true" id="hero-img">
+          <img src="./assets/Madhav.png" alt="Madhav Gupta" id="hero-photo" width="380" height="480" fetchpriority="high" decoding="async" />
         </div>
       </div>
 
-      <!-- 2nd Section — About -->
-      <div id="about" class="content page-scroll" style="justify-content: space-around">
-        <div class="img" data-aos="fade-right" data-aos-duration="1000">
-          <img src="./assets/Tech Coding-giphy.gif" alt="coding gif" />
+
+      <!-- ================================================
+           ABOUT SECTION
+           ================================================ -->
+      <div id="about" class="content page-scroll perf-section reveal" style="justify-content:space-around">
+        <div class="img" id="about-gif">
+          <img src="./assets/Tech Coding-giphy.gif" alt="Coding animation" width="400" height="400" loading="lazy" decoding="async" />
         </div>
-        <div class="column-2">
-          <svg xmlns="//www.w3.org/2000/svg" version="1.1" class="svg-filters" style="display: none">
+
+        <div class="column-2" id="about-col">
+          <!-- SVG marker filter -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="svg-filters" aria-hidden="true">
             <defs>
               <filter id="marker-shape">
                 <feTurbulence type="fractalNoise" baseFrequency="0 0.15" numOctaves="1" result="warp" />
@@ -257,391 +148,261 @@
               </filter>
             </defs>
           </svg>
-          <h2 style="font-weight: 550; color: #fff;">
-            <span class="low-highlight-pink">What I do</span>
+
+          <span class="section-tag">What I do</span>
+          <h2>
+            <span class="low-highlight-pink">Building smart systems</span>
           </h2>
-          <h3 style="font-size: 24px; color: #bbb; font-weight: 1">
-            I love building smart systems - from AI agents to full-stack apps!
-          </h3>
+          <p style="color:#8892a4;font-size:1.05rem;margin-top:0.5rem;">
+            I love crafting AI agents, automation pipelines, and full-stack apps!
+          </p>
+
+          <!-- Skill icons -->
           <div class="dev-icons">
-            <ul>
+            <ul role="list">
               <li class="software-skill-inline python">
-                <i class="devicon-python-plain"></i>
+                <i class="devicon-python-plain" aria-label="Python"></i>
                 <p>Python</p>
               </li>
               <li class="software-skill-inline cplusplus">
-                <i class="devicon-cplusplus-plain"></i>
+                <i class="devicon-cplusplus-plain" aria-label="C++"></i>
                 <p>C++</p>
               </li>
               <li class="software-skill-inline javascript">
-                <i class="devicon-javascript-plain"></i>
+                <i class="devicon-javascript-plain" aria-label="JavaScript"></i>
                 <p>JavaScript</p>
               </li>
               <li class="software-skill-inline react">
-                <i class="devicon-react-plain"></i>
+                <i class="devicon-react-plain" aria-label="React"></i>
                 <p>React</p>
               </li>
               <li class="software-skill-inline crewai">
-                <img src="assets/crewai.png" alt="CrewAI" class="custom-skill-icon">
+                <img src="assets/crewai.png" alt="CrewAI" class="custom-skill-icon" width="48" height="48" loading="lazy" decoding="async">
                 <p>CrewAI</p>
               </li>
               <li class="software-skill-inline n8n">
-                <img src="assets/n8n.png" alt="n8n" class="custom-skill-icon">
+                <img src="assets/n8n.png" alt="n8n" class="custom-skill-icon" width="48" height="48" loading="lazy" decoding="async">
                 <p>n8n</p>
               </li>
               <li class="software-skill-inline flutter">
-                <i class="devicon-flutter-plain"></i>
+                <i class="devicon-flutter-plain" aria-label="Flutter"></i>
                 <p>Flutter</p>
               </li>
               <li class="software-skill-inline docker">
-                <i class="devicon-docker-plain"></i>
+                <i class="devicon-docker-plain" aria-label="Docker"></i>
                 <p>Docker</p>
               </li>
               <li class="software-skill-inline nodejs">
-                <i class="devicon-nodejs-plain"></i>
+                <i class="devicon-nodejs-plain" aria-label="Node.js"></i>
                 <p>Node.js</p>
               </li>
               <li class="software-skill-inline git">
-                <i class="devicon-git-plain"></i>
+                <i class="devicon-git-plain" aria-label="Git"></i>
                 <p>Git</p>
               </li>
             </ul>
           </div>
 
-          <div style="margin-top: 2rem;">
-            <p style="color: #aaa; font-size: 19px; margin-bottom: 0.8rem;">
-              <span style="margin-right:8px; color: #ffeb3b;">⚡</span>
-              <b style="color: #eee; font-weight: 600;">Languages:</b> Python, C, C++, C#, SQL, Dart
-            </p>
-            <p style="color: #aaa; font-size: 19px; margin-bottom: 0.8rem;">
-              <span style="margin-right:8px; color: #ffeb3b;">⚡</span>
-              <b style="color: #eee; font-weight: 600;">Web &amp; App:</b> HTML, CSS, JavaScript, ReactJS, Node.js,
-              Firebase, FlutterFlow
-            </p>
-            <p style="color: #aaa; font-size: 19px; margin-bottom: 0.8rem;">
-              <span style="margin-right:8px; color: #ffeb3b;">⚡</span>
-              <b style="color: #eee; font-weight: 600;">AI &amp; Automation:</b> CrewAI, n8n, OpenAI, RAG, LangChain,
-              Multi-Agent Orchestration
-            </p>
-            <p style="color: #aaa; font-size: 19px; margin-bottom: 0.8rem;">
-              <span style="margin-right:8px; color: #ffeb3b;">⚡</span>
-              <b style="color: #eee; font-weight: 600;">Cloud &amp; Tools:</b> AWS, Azure, Git, GitHub, Docker, Postman, Playwright MCP, GEE
-            </p>
+          <!-- Tech details -->
+          <div style="margin-top:1.8rem;display:flex;flex-direction:column;gap:0.6rem;" id="about-lines">
+            <div class="about-line">
+              <svg class="icon about-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+              <span><strong>Languages:</strong> Python, C, C++, C#, SQL, Dart</span>
+            </div>
+            <div class="about-line">
+              <svg class="icon about-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+              <span><strong>Web &amp; App:</strong> HTML, CSS, JavaScript, ReactJS, Node.js, Firebase, FlutterFlow</span>
+            </div>
+            <div class="about-line">
+              <svg class="icon about-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+              <span><strong>AI &amp; Automation:</strong> CrewAI, n8n, OpenAI, RAG, LangChain, Multi-Agent Orchestration</span>
+            </div>
+            <div class="about-line">
+              <svg class="icon about-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+              <span><strong>Cloud &amp; Tools:</strong> AWS, Azure, Git, GitHub, Docker, Postman, Playwright MCP, GEE</span>
+            </div>
           </div>
-
         </div>
       </div>
 
 
-
-      <!-- 3rd Section — Projects -->
-      <svg xmlns="//www.w3.org/2000/svg" version="1.1" class="svg-filters" style="display: none">
+      <!-- ================================================
+           PROJECTS SECTION
+           ================================================ -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="svg-filters" aria-hidden="true">
         <defs>
-          <filter id="marker-shape">
+          <filter id="marker-shape-2">
             <feTurbulence type="fractalNoise" baseFrequency="0 0.15" numOctaves="1" result="warp" />
             <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warp" />
           </filter>
         </defs>
       </svg>
-      <h2 id="projects" class="mob-h2 page-scroll" style="font-size: 56px; font-weight: 700; margin-top: 50px">
+
+      <h2 id="projects" class="mob-h2 page-scroll reveal perf-section"
+        style="font-size:56px;font-weight:700;margin-top:60px;width:100%">
         <span class="low-highlight-cyan">Projects</span>
       </h2>
-      <!-- ColdBars Featured Spotlight -->
-      <div data-aos="fade-up" data-aos-duration="1500" style="
-        margin-top: 30px;
-        border-radius: 1.2rem;
-        background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
-        border: 1px solid rgba(255,255,255,0.12);
-        border-top: 1px solid rgba(255,255,255,0.25);
-        border-left: 1px solid rgba(255,255,255,0.18);
-        backdrop-filter: blur(1rem);
-        padding: 2.2rem 2.5rem;
-        display: flex;
-        gap: 2rem;
-        align-items: center;
-        flex-wrap: wrap;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-      ">
-        <img src="assets/Coldbars-logo.png" class="featured-project-logo" alt="Coldbars Logo">
-        <div style="flex: 1; min-width: 240px;">
-          <div style="display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-            <span
-              style="background: rgba(255,60,80,0.15); color: #ff6b6b; font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; letter-spacing: 1px; border: 1px solid rgba(255,60,80,0.3);">FEATURED
-              PROJECT</span>
-            <span
-              style="background: rgba(100,200,120,0.12); color: #6ed48a; font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; letter-spacing: 1px; border: 1px solid rgba(100,200,120,0.25);">LIVE
-              ON YOUTUBE</span>
+
+      <!-- ── ColdBars Featured Spotlight ── -->
+      <div class="featured-card reveal" id="featured-coldbars">
+        <div class="featured-card-header">
+          <img src="assets/Coldbars-logo.png" class="featured-project-logo" alt="Coldbars Logo" width="120" height="120" loading="lazy" decoding="async" />
+          <div class="featured-card-intro">
+            <div class="featured-badges">
+              <span class="badge-featured">Featured Project</span>
+              <span class="badge-live">Live on YouTube</span>
+            </div>
+            <h3 class="featured-title">ColdBars</h3>
           </div>
-          <h3 style="font-size: 1.6rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;">ColdBars 🎧</h3>
-          <p style="color: #aaa; font-size: 0.97rem; line-height: 1.65; margin-bottom: 1rem;">
-            A fully AI-powered YouTube music channel - no studio, no editing team, no budget.
-            Built an end-to-end n8n workflow that <strong style="color:#ddd;">generates lyrics via OpenAI</strong>,
-            <strong style="color:#ddd;">produces full songs using Suno</strong>, creates cinematic AI lip-sync shorts,
-            and publishes complete 4K music drops - fully automated. Just AI systems orchestrating other AI systems.
-          </p>
-          <div style="display:flex; flex-wrap:wrap; gap: 0.5rem; margin-bottom: 1.2rem;">
-            <span
-              style="background:rgba(255,255,255,0.07); color:#ccc; font-size:0.78rem; padding: 4px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">n8n</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#ccc; font-size:0.78rem; padding: 4px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">OpenAI</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#ccc; font-size:0.78rem; padding: 4px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">Suno
-              AI</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#ccc; font-size:0.78rem; padding: 4px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">GenAI</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#ccc; font-size:0.78rem; padding: 4px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">Workflow
-              Automation</span>
-          </div>
-          <a href="https://www.youtube.com/@coldbars-ai" target="_blank" style="
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            background: linear-gradient(135deg, #ff0000, #cc0000);
-            color: #fff; text-decoration: none; padding: 0.6rem 1.4rem;
-            border-radius: 30px; font-size: 0.9rem; font-weight: 600;
-            transition: 0.3s ease; box-shadow: 0 4px 15px rgba(255,0,0,0.3);
-          " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(255,0,0,0.4)';"
-            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255,0,0,0.3)';">
-            <i class="fab fa-youtube"></i> Watch on YouTube
-          </a>
         </div>
+        <p class="featured-desc">
+          A fully AI-powered YouTube music channel — no studio, no editing team, no budget.
+          Built an end-to-end n8n workflow that <strong>generates lyrics via OpenAI</strong>,
+          <strong>produces full songs using Suno</strong>, creates cinematic AI lip-sync shorts,
+          and publishes complete 4K music drops — fully automated. Just AI systems orchestrating other AI systems.
+        </p>
+        <div class="featured-tags">
+          <span class="tag-chip">n8n</span>
+          <span class="tag-chip">OpenAI</span>
+          <span class="tag-chip">Suno AI</span>
+          <span class="tag-chip">GenAI</span>
+          <span class="tag-chip">Workflow Automation</span>
+        </div>
+        <a href="https://www.youtube.com/@coldbars-ai" target="_blank" rel="noopener" class="btn-youtube">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path d="M9.8 15.5V8.5L15.8 12l-6 3.5z" fill="#fff"/></svg>
+          Watch on YouTube
+        </a>
       </div>
 
-      <!-- Project Cards Grid -->
-      <div style="
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-        gap: 1.2rem;
-        margin-top: 1.5rem;
-      " data-aos="fade-up" data-aos-duration="1500">
+      <!-- ── Project Cards Grid ── -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.2rem;margin-top:1.5rem;width:100%"
+        id="projects-grid" class="reveal-stagger perf-section">
 
         <!-- Santander -->
-        <div style="
-          border-radius: 1rem;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.1);
-          border-top: 1px solid rgba(255,255,255,0.2);
-          backdrop-filter: blur(1rem);
-          padding: 1.8rem;
-          transition: 0.3s ease;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        " onmouseover="this.style.background='rgba(255,255,255,0.08)'; this.style.transform='translateY(-4px)';"
-          onmouseout="this.style.background='rgba(255,255,255,0.04)'; this.style.transform='translateY(0)';">
-          <img src="assets/Santander-logo.webp" class="project-logo" alt="Santander Logo">
-          <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;">Santander —<br>Test
-            Automation</h4>
-          <p style="color: #aaa; font-size: 0.88rem; line-height: 1.6; margin-bottom: 1rem;">
+        <div class="project-card reveal-item">
+          <img src="assets/Santander-logo.webp" class="project-logo" alt="Santander Logo" width="200" height="44" loading="lazy" decoding="async" />
+          <h4>Santander — Test Automation</h4>
+          <p>
             Generated Gherkin test cases from user stories using OpenAI LLM &amp; a custom CrewAI agent.
             Auto-created StepDefs, XPaths, and modules. Executed web tests with Selenium and produced
             Cucumber reports. Extended the framework to Playwright using MCP for cross-tool test execution.
           </p>
-          <div style="display:flex; flex-wrap:wrap; gap: 0.4rem;">
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">CrewAI</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">OpenAI</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">Selenium</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">Playwright</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">Gherkin</span>
+          <div style="display:flex;flex-wrap:wrap;gap:0.4rem">
+            <span class="tag-chip">CrewAI</span>
+            <span class="tag-chip">OpenAI</span>
+            <span class="tag-chip">Selenium</span>
+            <span class="tag-chip">Playwright</span>
+            <span class="tag-chip">Gherkin</span>
           </div>
         </div>
 
         <!-- AboutNutrition -->
-        <div style="
-          border-radius: 1rem;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.1);
-          border-top: 1px solid rgba(255,255,255,0.2);
-          backdrop-filter: blur(1rem);
-          padding: 1.8rem;
-          transition: 0.3s ease;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        " onmouseover="this.style.background='rgba(255,255,255,0.08)'; this.style.transform='translateY(-4px)';"
-          onmouseout="this.style.background='rgba(255,255,255,0.04)'; this.style.transform='translateY(0)';">
-          <img src="assets/AboutNutrition.png" class="project-logo" alt="AboutNutrition Logo">
-          <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;">AboutNutrition
-            —<br>Healthcare Website</h4>
-          <p style="color: #aaa; font-size: 0.88rem; line-height: 1.6; margin-bottom: 1rem;">
+        <div class="project-card reveal-item">
+          <img src="assets/AboutNutrition.png" class="project-logo" alt="AboutNutrition Logo" width="200" height="44" loading="lazy" decoding="async" />
+          <h4>AboutNutrition — Healthcare Website</h4>
+          <p>
             Built a healthcare website with HTML, CSS &amp; JS integrating WhatsApp and Google Forms for client
-            engagement. Enhanced visibility and performance through SEO optimization, CDN integration,
-            and minified assets. Live at <a href="https://aboutnutrition.co.in" target="_blank"
-              style="color:#7ec8e3; text-decoration:none;">aboutnutrition.co.in</a>.
+            engagement. Enhanced visibility through SEO optimization, CDN integration, and minified assets.
+            Live at <a href="https://aboutnutrition.co.in" target="_blank" rel="noopener"
+              style="color:var(--cyan);text-decoration:none">aboutnutrition.co.in</a>.
           </p>
-          <div style="display:flex; flex-wrap:wrap; gap: 0.4rem;">
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">HTML/CSS/JS</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">SEO</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">CDN</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">WhatsApp
-              API</span>
+          <div style="display:flex;flex-wrap:wrap;gap:0.4rem">
+            <span class="tag-chip">HTML/CSS/JS</span>
+            <span class="tag-chip">SEO</span>
+            <span class="tag-chip">CDN</span>
+            <span class="tag-chip">WhatsApp API</span>
           </div>
         </div>
 
         <!-- Floods Forecast -->
-        <div style="
-          border-radius: 1rem;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.1);
-          border-top: 1px solid rgba(255,255,255,0.2);
-          backdrop-filter: blur(1rem);
-          padding: 1.8rem;
-          transition: 0.3s ease;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        " onmouseover="this.style.background='rgba(255,255,255,0.08)'; this.style.transform='translateY(-4px)';"
-          onmouseout="this.style.background='rgba(255,255,255,0.04)'; this.style.transform='translateY(0)';">
-          <img src="assets/SIH.png" class="project-logo" alt="SIH Logo">
-          <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;">Floods Forecast —<br>SIH
-            2023 🏆 2nd Rank</h4>
-          <p style="color: #aaa; font-size: 0.88rem; line-height: 1.6; margin-bottom: 1rem;">
+        <div class="project-card reveal-item">
+          <img src="assets/SIH.png" class="project-logo" alt="SIH Logo" width="200" height="44" loading="lazy" decoding="async" />
+          <h4>Floods Forecast — SIH 2023 🏆 2nd Rank</h4>
+          <p>
             Designed a UI to project river flood inundation extents from level forecasts. Used Sentinel-2
             satellite imagery on Google Earth Engine to map inundation areas. Applied Random Forest
-            for flood forecasting achieving <strong style="color:#6ed48a;">98% accuracy</strong> based on weather
-            conditions.
+            for flood forecasting achieving <strong style="color:#4ade80">98% accuracy</strong>.
           </p>
-          <div style="display:flex; flex-wrap:wrap; gap: 0.4rem;">
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">Python</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">Random
-              Forest</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">Google
-              Earth Engine</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">Sentinel-2</span>
+          <div style="display:flex;flex-wrap:wrap;gap:0.4rem">
+            <span class="tag-chip">Python</span>
+            <span class="tag-chip">Random Forest</span>
+            <span class="tag-chip">Google Earth Engine</span>
+            <span class="tag-chip">Sentinel-2</span>
           </div>
         </div>
 
         <!-- Automated Evaluation -->
-        <div style="
-          border-radius: 1rem;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.1);
-          border-top: 1px solid rgba(255,255,255,0.2);
-          backdrop-filter: blur(1rem);
-          padding: 1.8rem;
-          transition: 0.3s ease;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        " onmouseover="this.style.background='rgba(255,255,255,0.08)'; this.style.transform='translateY(-4px)';"
-          onmouseout="this.style.background='rgba(255,255,255,0.04)'; this.style.transform='translateY(0)';">
-          <img src="assets/tvs credit logo.png" class="project-logo" alt="TVS Credit Logo">
-          <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;">
-            Automated Evaluation —
-            TVS Credit 2022 🏅 4th Rank
-          </h4>
-          <p style="color: #aaa; font-size: 0.88rem; line-height: 1.6; margin-bottom: 1rem;">
-            Built an automated system for analyzing second-hand car prices using image and audio similarity for
-            <strong>TVS Credit</strong>.
-            Compared images via SSIM/ORB and audio with fingerprints using AcoustID. Optimized using
-            <strong style="color:#6ed48a;">XGBoost</strong> for <strong style="color:#6ed48a;">95% accuracy</strong>.
+        <div class="project-card reveal-item">
+          <img src="assets/tvs credit logo.png" class="project-logo" alt="TVS Credit Logo" width="200" height="44" loading="lazy" decoding="async" />
+          <h4>Automated Evaluation — TVS Credit 2022 🏅 4th</h4>
+          <p>
+            Built an automated system for analyzing second-hand car prices using image and audio similarity
+            for <strong>TVS Credit</strong>. Compared images via SSIM/ORB and audio with AcoustID fingerprints.
+            Optimized using <strong style="color:#4ade80">XGBoost</strong> for <strong style="color:#4ade80">95% accuracy</strong>.
           </p>
-          <div style="display:flex; flex-wrap:wrap; gap: 0.4rem;">
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">XGBoost</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">Computer
-              Vision</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">Audio
-              Processing</span>
+          <div style="display:flex;flex-wrap:wrap;gap:0.4rem">
+            <span class="tag-chip">XGBoost</span>
+            <span class="tag-chip">Computer Vision</span>
+            <span class="tag-chip">Audio Processing</span>
           </div>
         </div>
 
         <!-- Company Policy Chatbot -->
-        <div style="
-          border-radius: 1rem;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.1);
-          border-top: 1px solid rgba(255,255,255,0.2);
-          backdrop-filter: blur(1rem);
-          padding: 1.8rem;
-          transition: 0.3s ease;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        " onmouseover="this.style.background='rgba(255,255,255,0.08)'; this.style.transform='translateY(-4px)';"
-          onmouseout="this.style.background='rgba(255,255,255,0.04)'; this.style.transform='translateY(0)';">
-          <div style="font-size: 2rem; margin-bottom: 0.8rem;">💬</div>
-          <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;">Company Policy Chatbot
-            —<br>RAG Assistant</h4>
-          <p style="color: #aaa; font-size: 0.88rem; line-height: 1.6; margin-bottom: 1rem;">
+        <div class="project-card reveal-item">
+          <div style="font-size:2rem;margin-bottom:0.8rem" aria-hidden="true">💬</div>
+          <h4>Company Policy Chatbot — RAG Assistant</h4>
+          <p>
             Developed a production-ready <strong>RAG application</strong> to automate internal policy extraction.
             Built a <strong>FastAPI backend</strong> for <strong>PDF/DOCX/TXT</strong> ingestion with vector-based
-            retrieval,
-            and integrated a <strong>React + Vite frontend</strong> to deliver instant, context-aware answers powered by
-            <strong>OpenAI</strong>.
+            retrieval, and integrated a <strong>React + Vite frontend</strong> powered by <strong>OpenAI</strong>.
           </p>
-          <div style="display:flex; flex-wrap:wrap; gap: 0.4rem;">
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">LangChain</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">FastAPI</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">ChromaDB</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">React</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">OpenAI</span>
+          <div style="display:flex;flex-wrap:wrap;gap:0.4rem">
+            <span class="tag-chip">LangChain</span>
+            <span class="tag-chip">FastAPI</span>
+            <span class="tag-chip">ChromaDB</span>
+            <span class="tag-chip">React</span>
+            <span class="tag-chip">OpenAI</span>
           </div>
         </div>
 
         <!-- GestureGalaxy -->
-        <div style="
-          border-radius: 1rem;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.1);
-          border-top: 1px solid rgba(255,255,255,0.2);
-          backdrop-filter: blur(1rem);
-          padding: 1.8rem;
-          transition: 0.3s ease;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        " onmouseover="this.style.background='rgba(255,255,255,0.08)'; this.style.transform='translateY(-4px)';"
-          onmouseout="this.style.background='rgba(255,255,255,0.04)'; this.style.transform='translateY(0)';">
-          <div style="font-size: 2rem; margin-bottom: 0.8rem;">🌌</div>
-          <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;">
-            GestureGalaxy —<br>
-            Solar Command Center</h4>
-          <p style="color: #aaa; font-size: 0.88rem; line-height: 1.6; margin-bottom: 1rem;">
-            An immersive <strong>3D Solar System simulation</strong> and educational tool combining high-fidelity
-            rendering with space-age UI.
-            Integrated <strong>Computer Vision</strong> to enable real-time hand gesture controls, allowing users to
-            navigate and interact with celestial bodies hands-free.
-            Live at <a href="https://madhavgupta14.github.io/GestureGalaxy/" target="_blank"
-              style="color:#7ec8e3; text-decoration:none;">madhavgupta14.github.io/GestureGalaxy</a>.
+        <div class="project-card reveal-item">
+          <div style="font-size:2rem;margin-bottom:0.8rem" aria-hidden="true">🌌</div>
+          <h4>GestureGalaxy — Solar Command Center</h4>
+          <p>
+            An immersive <strong>3D Solar System simulation</strong> combining high-fidelity rendering with space-age UI.
+            Integrated <strong>Computer Vision</strong> for real-time hand gesture controls, letting users navigate
+            celestial bodies hands-free.
+            Live at <a href="https://madhavgupta14.github.io/GestureGalaxy/" target="_blank" rel="noopener"
+              style="color:var(--cyan);text-decoration:none">GestureGalaxy</a>.
           </p>
-          <div style="display:flex; flex-wrap:wrap; gap: 0.4rem;">
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">Three.js</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">Mediapipe</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">JavaScript</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">CSS</span>
-            <span
-              style="background:rgba(255,255,255,0.07); color:#bbb; font-size:0.74rem; padding: 3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1);">HTML</span>
+          <div style="display:flex;flex-wrap:wrap;gap:0.4rem">
+            <span class="tag-chip">Three.js</span>
+            <span class="tag-chip">Mediapipe</span>
+            <span class="tag-chip">JavaScript</span>
+            <span class="tag-chip">CSS</span>
           </div>
         </div>
-      </div>
+
+      </div><!-- /projects-grid -->
 
 
-      <!-- 4th Section — Experience -->
-      <h2 data-aos="fade-down" data-aos-duration="1500" id="experience" class="mob-h2 page-scroll"
-        style="font-size: 56px; font-weight: 700; margin-top: 50px; text-align:center;">
+      <!-- ================================================
+           EXPERIENCE SECTION
+           ================================================ -->
+      <h2 id="experience" class="mob-h2 page-scroll reveal perf-section"
+        style="font-size:56px;font-weight:700;margin-top:60px;text-align:center;width:100%">
         <span class="low-highlight-skin">Experience</span>
       </h2>
-      <div class="experience-cards-div" title="Professional Experiences">
+      <div class="experience-cards-div reveal-stagger perf-section" id="exp-grid" title="Professional Experiences">
 
-        <!-- Card 1 — TestingXperts -->
-        <div class="experience-card" data-aos="fade-right" data-aos-duration="1500">
+        <!-- TestingXperts -->
+        <div class="experience-card reveal-item">
           <div class="experience-banner banner-testingxperts">
             <div class="experience-blurred_div"></div>
             <div class="experience-div-company">
-              <img src="assets/TestingXperts_Logo.jpg" class="company-initials" alt="TestingXperts"
-                style="object-fit: cover;">
+              <img src="assets/TestingXperts_Logo.jpg" class="company-initials"
+                alt="TestingXperts" style="object-fit:cover" width="104" height="104" loading="lazy" decoding="async" />
             </div>
           </div>
           <div class="experience-text-details">
@@ -656,12 +417,13 @@
           </div>
         </div>
 
-        <!-- Card 2 — Netsmartz -->
-        <div class="experience-card" data-aos="fade-right" data-aos-duration="1800">
+        <!-- Netsmartz -->
+        <div class="experience-card reveal-item">
           <div class="experience-banner banner-netsmartz">
             <div class="experience-blurred_div"></div>
             <div class="experience-div-company">
-              <img src="assets/Netsmartz.jpg" class="company-initials" alt="Netsmartz" style="object-fit: contain;">
+              <img src="assets/Netsmartz.jpg" class="company-initials"
+                alt="Netsmartz" style="object-fit:contain" width="104" height="104" loading="lazy" decoding="async" />
             </div>
           </div>
           <div class="experience-text-details">
@@ -675,13 +437,13 @@
           </div>
         </div>
 
-        <!-- Card 3 — Krysna -->
-        <div class="experience-card" data-aos="fade-right" data-aos-duration="2000">
+        <!-- Krysna -->
+        <div class="experience-card reveal-item">
           <div class="experience-banner banner-krysna">
             <div class="experience-blurred_div"></div>
             <div class="experience-div-company">
-              <img src="assets/KrysnaTechnovations.png" class="company-initials" alt="Krysna Technovations"
-                style="object-fit: contain;">
+              <img src="assets/KrysnaTechnovations.png" class="company-initials"
+                alt="Krysna Technovations" style="object-fit:contain" width="104" height="104" loading="lazy" decoding="async" />
             </div>
           </div>
           <div class="experience-text-details">
@@ -696,197 +458,195 @@
           </div>
         </div>
 
-        <!-- Card 4 — Nokia -->
-        <div class="experience-card" data-aos="fade-right" data-aos-duration="2200">
+        <!-- Nokia -->
+        <div class="experience-card reveal-item">
           <div class="experience-banner banner-nokia">
             <div class="experience-blurred_div"></div>
             <div class="experience-div-company">
-              <img src="assets/Nokia.jpg" class="company-initials" alt="Nokia" style="object-fit: cover;">
+              <img src="assets/Nokia.jpg" class="company-initials"
+                alt="Nokia" style="object-fit:cover" width="104" height="104" loading="lazy" decoding="async" />
             </div>
           </div>
           <div class="experience-text-details">
             <h5 class="experience-text-role">Python Developer Intern</h5>
             <h5 class="experience-text-date">May 2023 – Aug 2023</h5>
             <p class="subTitle experience-text-desc">
-              Implemented an automation framework for processing binary and macro workbooks. Developed a configurable
-              Python XML parser to extract tower data from raw text files. Integrated parsed output with the NOKIA
-              framework for automated data workflows.
+              Implemented automation for processing binary and macro workbooks. Developed a configurable
+              Python XML parser for tower data extraction. Integrated parsed output with NOKIA framework.
             </p>
           </div>
         </div>
-      </div>
+
+      </div><!-- /exp-grid -->
 
 
-
-      <!-- 5th Section — Achievements -->
-      <h2 id="achievements" class="mob-h2 page-scroll" style="font-size: 56px; font-weight: 700; margin-top: 50px"
-        data-aos="fade-down" data-aos-duration="1200">
+      <!-- ================================================
+           ACHIEVEMENTS SECTION
+           ================================================ -->
+      <h2 id="achievements" class="mob-h2 page-scroll reveal perf-section"
+        style="font-size:56px;font-weight:700;margin-top:60px;width:100%">
         <span class="low-highlight-lightyellow">Achievements</span>
       </h2>
-      <div class="achievements-div" data-aos="fade-up" data-aos-duration="1400">
-        <div class="achievement-card">
-          <div class="achievement-icon">🏆</div>
+      <div class="achievements-div reveal-stagger perf-section" id="achievements-grid">
+
+        <div class="achievement-card reveal-item">
+          <div class="achievement-icon" aria-hidden="true">🏆</div>
           <div class="achievement-text">
             <h4>SIH 2023 — 2nd Rank</h4>
             <p>Led team to 2nd Rank in Smart India Hackathon 2023, selected from 50,000+ ideas.</p>
           </div>
         </div>
-        <div class="achievement-card">
-          <div class="achievement-icon">🎓</div>
+
+        <div class="achievement-card reveal-item">
+          <div class="achievement-icon" aria-hidden="true">🎓</div>
           <div class="achievement-text">
             <h4>Amazon ML Summer School 2023</h4>
             <p>Selected for and completed the Amazon ML Summer School 2023.</p>
           </div>
         </div>
-        <div class="achievement-card">
-          <div class="achievement-icon">🥇</div>
+
+        <div class="achievement-card reveal-item">
+          <div class="achievement-icon" aria-hidden="true">🥇</div>
           <div class="achievement-text">
             <h4>TVS Credit E.P.I.C Season 4</h4>
             <p>Ranked 4th among 1,700 teams in TVS Credit IT Challenge 2022.</p>
           </div>
         </div>
-        <div class="achievement-card">
-          <div class="achievement-icon">💡</div>
+
+        <div class="achievement-card reveal-item">
+          <div class="achievement-icon" aria-hidden="true">💡</div>
           <div class="achievement-text">
             <h4>Thapar Merit Scholarship</h4>
             <p>Received scholarship of ₹1 lac for being in top 5% among 3,500 students (2021).</p>
           </div>
         </div>
-      </div>
 
-      <!-- Certifications Section -->
-      <h2 id="certifications" class="mob-h2 page-scroll" style="font-size: 56px; font-weight: 700; margin-top: 50px"
-        data-aos="fade-down" data-aos-duration="1200">
+      </div><!-- /achievements-grid -->
+
+
+      <!-- ================================================
+           CERTIFICATIONS SECTION
+           ================================================ -->
+      <h2 id="certifications" class="mob-h2 page-scroll reveal perf-section"
+        style="font-size:56px;font-weight:700;margin-top:60px;width:100%">
         <span class="low-highlight-cyan">Certifications</span>
       </h2>
-      <div class="certifications-div" data-aos="fade-up" data-aos-duration="1400">
+      <div class="certifications-div reveal-stagger perf-section" id="certs-grid">
 
-        <div class="achievement-card">
-          <div class="achievement-icon">☁️</div>
+        <div class="achievement-card reveal-item">
+          <div class="achievement-icon" aria-hidden="true">☁️</div>
           <div class="achievement-text">
             <h4>Claude with the Anthropic API</h4>
-            <p><strong>Anthropic</strong> &nbsp;·&nbsp; Issued Apr 2026</p>
-            <p style="margin-top:4px; font-size:0.8rem; color:#888;">LLM APIs &nbsp;·&nbsp; AI Integrations
-              &nbsp;·&nbsp; Agentic Workflows</p>
+            <p><strong>Anthropic</strong> · Issued Apr 2026</p>
+            <p style="margin-top:4px;font-size:0.78rem;color:var(--text-muted)">LLM APIs · AI Integrations · Agentic Workflows</p>
           </div>
         </div>
 
-        <div class="achievement-card">
-          <div class="achievement-icon">☁️</div>
+        <div class="achievement-card reveal-item">
+          <div class="achievement-icon" aria-hidden="true">☁️</div>
           <div class="achievement-text">
             <h4>Introduction to Model Context Protocol (MCP)</h4>
-            <p><strong>Anthropic</strong> &nbsp;·&nbsp; Issued Apr 2026</p>
-            <p style="margin-top:4px; font-size:0.8rem; color:#888;">MCP &nbsp;·&nbsp; Tool Calling
-              &nbsp;·&nbsp; Multi-Agent Systems</p>
+            <p><strong>Anthropic</strong> · Issued Apr 2026</p>
+            <p style="margin-top:4px;font-size:0.78rem;color:var(--text-muted)">MCP · Tool Calling · Multi-Agent Systems</p>
           </div>
         </div>
 
-        <div class="achievement-card">
-          <div class="achievement-icon">⚡</div>
+        <div class="achievement-card reveal-item">
+          <div class="achievement-icon" aria-hidden="true">⚡</div>
           <div class="achievement-text">
             <h4>n8n Level 1 &amp; Level 2 Course</h4>
-            <p><strong>n8n Official</strong>  &nbsp;·&nbsp; Issued Feb 2026</p>
-            <p style="margin-top:4px; font-size:0.8rem; color:#888;">Workflow Automation &nbsp;·&nbsp; AI Agents
-              &nbsp;·&nbsp; LLM Integration</p>
+            <p><strong>n8n Official</strong> · Issued Feb 2026</p>
+            <p style="margin-top:4px;font-size:0.78rem;color:var(--text-muted)">Workflow Automation · AI Agents · LLM Integration</p>
           </div>
         </div>
 
-        <div class="achievement-card">
-          <div class="achievement-icon">🛠️</div>
+        <div class="achievement-card reveal-item">
+          <div class="achievement-icon" aria-hidden="true">🛠️</div>
           <div class="achievement-text">
             <h4>Azure DevOps Fundamentals for Beginners</h4>
-            <p><strong>Udemy</strong> &nbsp;·&nbsp; Issued Feb 2026</p>
-            <p style="margin-top:4px; font-size:0.8rem; color:#888;">DevOps Fundamentals &nbsp;·&nbsp; Azure DevOps
-              &nbsp;·&nbsp; Azure Pipelines &nbsp;·&nbsp; CI/CD</p>
+            <p><strong>Udemy</strong> · Issued Feb 2026</p>
+            <p style="margin-top:4px;font-size:0.78rem;color:var(--text-muted)">DevOps · Azure Pipelines · CI/CD</p>
           </div>
         </div>
 
-        <div class="achievement-card">
-          <div class="achievement-icon">🤖</div>
+        <div class="achievement-card reveal-item">
+          <div class="achievement-icon" aria-hidden="true">🤖</div>
           <div class="achievement-text">
             <h4>Multi-Agent AI Systems with CrewAI</h4>
-            <p><strong>DeepLearning.AI</strong> &nbsp;·&nbsp; Issued Nov 2025</p>
-            <p style="margin-top:4px; font-size:0.8rem; color:#888;">RAG &nbsp;·&nbsp; AI Frameworks &nbsp;·&nbsp;
-              GenAI
-              Applications &nbsp;·&nbsp; AI Task Automation</p>
+            <p><strong>DeepLearning.AI</strong> · Issued Nov 2025</p>
+            <p style="margin-top:4px;font-size:0.78rem;color:var(--text-muted)">RAG · AI Frameworks · GenAI · Task Automation</p>
           </div>
         </div>
 
-        <div class="achievement-card">
-          <div class="achievement-icon">🧠</div>
+        <div class="achievement-card reveal-item">
+          <div class="achievement-icon" aria-hidden="true">🧠</div>
           <div class="achievement-text">
-            <h4>Practical Multi AI Agents &amp; Advanced Use Cases with CrewAI</h4>
-            <p><strong>DeepLearning.AI</strong> &nbsp;·&nbsp; Issued Nov 2025</p>
-            <p style="margin-top:4px; font-size:0.8rem; color:#888;">Agents &nbsp;·&nbsp; Generative AI &nbsp;·&nbsp;
-              Chatbots &nbsp;·&nbsp; Generative Models &nbsp;·&nbsp; AI Task Automation</p>
+            <h4>Practical Multi AI Agents with CrewAI</h4>
+            <p><strong>DeepLearning.AI</strong> · Issued Nov 2025</p>
+            <p style="margin-top:4px;font-size:0.78rem;color:var(--text-muted)">Agents · Generative AI · Chatbots · Automation</p>
           </div>
         </div>
 
-      </div>
+      </div><!-- /certs-grid -->
 
 
+      <!-- ================================================
+           CONTACT (mobile) + SOCIAL LINKS
+           ================================================ -->
       <h2 id="contact" class="mob-connect enabledisable page-scroll"
-        style="font-size: 40px; font-weight: 700; margin-top: 50px">
+        style="font-size:40px;font-weight:700;margin-top:50px">
         <span class="low-highlight-hazeskin">Connect with me</span>
       </h2>
-      <ul class="socialsites">
+
+      <ul class="social-footer enabledisable" role="list" aria-label="Social media links">
         <li>
-          <a href="https://github.com/Madhavgupta14" target="_blank"><i class="fab fa-github"></i></a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/madhav-gupta-a57a3127b/" target="_blank"><i
-              class="fab fa-linkedin"></i></a>
-        </li>
-        <li>
-          <a href="https://x.com/Madhav_Gupta14" target="_blank">
-            <img src="assets/x-logo.png" alt="X.com" style="width: 16px; height: 16px;" />
+          <a href="https://github.com/Madhavgupta14" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg class="icon social-github" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.76.5 12.26c0 5.18 3.29 9.57 7.86 11.12.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.72-3.88-1.57-3.88-1.57-.53-1.37-1.3-1.74-1.3-1.74-1.06-.74.08-.73.08-.73 1.17.08 1.79 1.23 1.79 1.23 1.04 1.83 2.73 1.3 3.4.99.11-.77.41-1.3.74-1.6-2.56-.3-5.25-1.31-5.25-5.84 0-1.29.45-2.34 1.18-3.17-.12-.3-.51-1.52.11-3.17 0 0 .96-.31 3.15 1.21a10.7 10.7 0 0 1 2.88-.39c.98 0 1.96.13 2.88.39 2.19-1.52 3.14-1.21 3.14-1.21.63 1.65.24 2.87.12 3.17.74.83 1.18 1.88 1.18 3.17 0 4.54-2.7 5.53-5.28 5.82.42.37.79 1.09.79 2.2 0 1.59-.01 2.87-.01 3.26 0 .31.21.68.8.56A10.55 10.55 0 0 0 23.5 12.26C23.5 5.76 18.35.5 12 .5z"/></svg>
           </a>
         </li>
-
+        <li>
+          <a href="https://www.linkedin.com/in/madhav-gupta-a57a3127b/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg class="icon social-linkedin" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/Madhav_Gupta14" target="_blank" rel="noopener" aria-label="X (Twitter)">
+            <img src="assets/x-logo.png" alt="" class="social-x-img" width="18" height="18" decoding="async" />
+          </a>
+        </li>
       </ul>
 
-
-      <!-- Footer -->
-    </div>
+    </div><!-- /container -->
   </section>
-  <div class="button-top-div" id="myDIV">
-    <a id="button-top" href="#top"><i class="fas fa-chevron-up"></i></a>
+
+  <!-- Fixed social circles (desktop sidebar) -->
+  <ul class="socialsites" role="list" aria-label="Social media links">
+    <li>
+      <a href="https://github.com/Madhavgupta14" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg class="icon social-github" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.76.5 12.26c0 5.18 3.29 9.57 7.86 11.12.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.72-3.88-1.57-3.88-1.57-.53-1.37-1.3-1.74-1.3-1.74-1.06-.74.08-.73.08-.73 1.17.08 1.79 1.23 1.79 1.23 1.04 1.83 2.73 1.3 3.4.99.11-.77.41-1.3.74-1.6-2.56-.3-5.25-1.31-5.25-5.84 0-1.29.45-2.34 1.18-3.17-.12-.3-.51-1.52.11-3.17 0 0 .96-.31 3.15 1.21a10.7 10.7 0 0 1 2.88-.39c.98 0 1.96.13 2.88.39 2.19-1.52 3.14-1.21 3.14-1.21.63 1.65.24 2.87.12 3.17.74.83 1.18 1.88 1.18 3.17 0 4.54-2.7 5.53-5.28 5.82.42.37.79 1.09.79 2.2 0 1.59-.01 2.87-.01 3.26 0 .31.21.68.8.56A10.55 10.55 0 0 0 23.5 12.26C23.5 5.76 18.35.5 12 .5z"/></svg>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/madhav-gupta-a57a3127b/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg class="icon social-linkedin" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+    </li>
+    <li>
+      <a href="https://x.com/Madhav_Gupta14" target="_blank" rel="noopener" aria-label="X (Twitter)">
+        <img src="assets/x-logo.png" alt="" class="social-x-img" width="18" height="18" decoding="async" />
+      </a>
+    </li>
+  </ul>
+
+  <!-- Back to top -->
+  <div class="button-top-div" id="myDIV" style="display:none">
+    <a id="button-top" href="#top" aria-label="Back to top">
+      <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m18 15-6-6-6 6"/></svg>
+    </a>
   </div>
 
-  <!-- Page Scroll Percentage -->
-  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/script.js" defer></script>
+  <script src="./assets/js/motion.js" defer></script>
 
-  <!-- Page Scroll Up On Click -->
-  <script>
-    //scroller fixed
-    var scrolBtn = document.querySelector("#myDIV");
-    window.addEventListener("scroll", function () {
-      let offset;
-      offset = window.pageYOffset;
-      if (offset > 300) {
-        scrolBtn.style.display = "block";
-      }
-      if (offset < 300) {
-        scrolBtn.style.display = "none";
-      }
-    });
-
-    //remove that #s in the link
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-        });
-      });
-    });
-  </script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
 </body>
-
 </html>
