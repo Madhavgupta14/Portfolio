@@ -766,17 +766,19 @@ header ul li a.active {
   filter: drop-shadow(0 20px 60px rgba(124,58,237,0.3));
 }
 
+/* Show + size the hero photo and About gif on tablet/mobile (were hidden) */
 @media (max-width: 1100px) {
-  .img img:not(.shape) { display: none; }
+  .img { min-width: 0; }
+  .img img:not(.shape) {
+    display: block;
+    max-width: min(300px, 72vw);
+    max-height: none;
+    height: auto;
+    margin: 0 auto;
+  }
 }
 
-/* Hero photo: hard fade on the right edge so it bleeds into the page */
-#hero-photo {
-  -webkit-mask-image: linear-gradient(to right, #000 64%, transparent 88%);
-          mask-image: linear-gradient(to right, #000 64%, transparent 88%);
-}
-
-/* Photo emerges from the panel's right edge and bleeds out (desktop only) */
+/* Desktop only: photo bleeds off the panel's right edge with a hard fade */
 @media (min-width: 1101px) {
   #hero-col { min-width: 0; }          /* let the text shrink instead of overflowing */
   #hero-img {
@@ -784,6 +786,10 @@ header ul li a.active {
     position: relative;
     z-index: 2;
     margin-right: -120px;              /* pull photo onto the panel edge + bleed out */
+  }
+  #hero-photo {
+    -webkit-mask-image: linear-gradient(to right, #000 64%, transparent 88%);
+            mask-image: linear-gradient(to right, #000 64%, transparent 88%);
   }
 }
 
