@@ -5,6 +5,14 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Security: Content-Security-Policy locks resource origins to self + the
+       fonts/devicon CDNs actually used. script-src is strict 'self' (no inline JS).
+       Clickjacking: GitHub Pages can't send frame-ancestors / X-Frame-Options
+       headers, so a JS frame-buster in script.js breaks out of foreign frames. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data:; media-src 'self'; connect-src 'self'; manifest-src 'self'; form-action 'none'; upgrade-insecure-requests" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
   <title>Portfolio — Madhav Gupta · AI Engineer</title>
 
   <!-- Favicons -->
@@ -17,20 +25,23 @@
   <meta name="author" content="Madhav Gupta" />
   <meta name="description" content="Developer Portfolio of Madhav Gupta — AI Engineer, Full Stack Developer, ECE Graduate from Thapar." />
   <meta name="keywords" content="Developer, Portfolio, HTML, CSS, JS, Madhav, Madhav Gupta, AI Engineer, Full Stack, Thapar" />
-  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
 
   <!-- Critical CSS only -->
   <link rel="stylesheet" href="./assets/css/style.css" />
 
-  <!-- Fonts + devicons: non-blocking -->
+  <!-- Fonts + devicons: non-blocking. The font stylesheet loads as media="print"
+       and is flipped to "all" by script.js (CSP-safe — no inline onload handler). -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet"
+  <link rel="stylesheet" id="font-css"
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500&display=swap"
-    media="print" onload="this.media='all'">
-  <!-- devicon: loaded normally so icons paint on first render -->
+    media="print">
+  <!-- devicon: loaded normally so icons paint on first render (SRI-pinned) -->
   <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css"
+    integrity="sha384-DjehTlU5SubGD1zUGe78SkwLgw+q2y9DXnmy3EaDbXA9nvFMPW3LP5verNrWr9rW"
+    crossorigin="anonymous" referrerpolicy="no-referrer">
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500&display=swap">
   </noscript>
@@ -58,7 +69,13 @@
         <a href="#top" class="logo" aria-label="Home — Madhav">
           <img src="./assets/logo-mark.png" class="logo-mark" alt="Madhav logo" width="38" height="38" decoding="async" />
         </a>
-        <ul role="list">
+        <button class="nav-toggle" id="nav-toggle" type="button"
+          aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <ul role="list" id="primary-nav">
           <li><a class="active page" href="#top" id="home-btn">Home</a></li>
           <li><a href="#about" class="page" id="about-btn">About</a></li>
           <li><a href="#projects" class="page" id="project-btn">Projects</a></li>
@@ -112,7 +129,10 @@
 
         <!-- Hero illustration (CSS blobs replace decorative PNG shapes) -->
         <div class="img" aria-hidden="true" id="hero-img">
-          <img src="./assets/Madhav.png" alt="Madhav Gupta" id="hero-photo" width="380" height="480" fetchpriority="high" decoding="async" />
+          <picture>
+            <source srcset="./assets/Madhav.webp" type="image/webp" />
+            <img src="./assets/Madhav.png" alt="Madhav Gupta" id="hero-photo" width="380" height="513" fetchpriority="high" decoding="async" />
+          </picture>
         </div>
       </div>
 
@@ -122,7 +142,10 @@
            ================================================ -->
       <div id="about" class="content page-scroll perf-section reveal" style="justify-content:space-around">
         <div class="img" id="about-gif">
-          <img src="./assets/Tech Coding-giphy.gif" alt="Coding animation" width="400" height="400" loading="lazy" decoding="async" />
+          <video id="about-video" class="about-video" width="400" height="400" muted loop playsinline
+            preload="none" poster="./assets/coding-poster.webp" aria-hidden="true">
+            <source data-src="./assets/coding.mp4" type="video/mp4" />
+          </video>
         </div>
 
         <div class="column-2" id="about-col">
@@ -367,7 +390,7 @@
           <p>
             Designed a UI to project river flood inundation extents from level forecasts. Used Sentinel-2
             satellite imagery on Google Earth Engine to map inundation areas. Applied Random Forest
-            for flood forecasting achieving <strong style="color:#CE2029">98% accuracy</strong>.
+            for flood forecasting achieving <strong style="color:rgb(20, 140, 252)">98% accuracy</strong>.
           </p>
           <div style="display:flex;flex-wrap:wrap;gap:0.4rem">
             <span class="tag-chip">Python</span>
@@ -384,7 +407,7 @@
           <p>
             Built an automated system for analyzing second-hand car prices using image and audio similarity
             for <strong>TVS Credit</strong>. Compared images via SSIM/ORB and audio with AcoustID fingerprints.
-            Optimized using XGBoost for <strong style="color:#CE2029">95% accuracy</strong>.
+            Optimized using XGBoost for <strong style="color:rgb(20, 140, 252)">95% accuracy</strong>.
           </p>
           <div style="display:flex;flex-wrap:wrap;gap:0.4rem">
             <span class="tag-chip">XGBoost</span>
@@ -580,9 +603,15 @@
         style="font-size:56px;font-weight:700;margin-top:60px;text-align:center;width:100%">
         <span class="low-highlight-cyan">Certifications</span>
       </h2>
-      <div class="certifications-div reveal-stagger perf-section" id="certs-grid">
+      <div class="certs-carousel" id="certs-carousel">
+        <button class="certs-nav certs-prev" type="button" aria-label="Scroll certifications left" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
 
-        <div class="achievement-card reveal-item">
+        <div class="certifications-div reveal-stagger" id="certs-grid"
+          role="list" tabindex="0" aria-label="Certifications — scroll horizontally to see more">
+
+        <div class="achievement-card reveal-item" role="listitem">
           <div class="achievement-icon" aria-hidden="true">☁️</div>
           <div class="achievement-text">
             <h4>Claude with the Anthropic API</h4>
@@ -591,7 +620,7 @@
           </div>
         </div>
 
-        <div class="achievement-card reveal-item">
+        <div class="achievement-card reveal-item" role="listitem">
           <div class="achievement-icon" aria-hidden="true">☁️</div>
           <div class="achievement-text">
             <h4>Introduction to Model Context Protocol (MCP)</h4>
@@ -600,7 +629,7 @@
           </div>
         </div>
 
-        <div class="achievement-card reveal-item">
+        <div class="achievement-card reveal-item" role="listitem">
           <div class="achievement-icon" aria-hidden="true">⚡</div>
           <div class="achievement-text">
             <h4>n8n Level 1 &amp; Level 2 Course</h4>
@@ -609,7 +638,7 @@
           </div>
         </div>
 
-        <div class="achievement-card reveal-item">
+        <div class="achievement-card reveal-item" role="listitem">
           <div class="achievement-icon" aria-hidden="true">🛠️</div>
           <div class="achievement-text">
             <h4>Azure DevOps Fundamentals for Beginners</h4>
@@ -618,7 +647,7 @@
           </div>
         </div>
 
-        <div class="achievement-card reveal-item">
+        <div class="achievement-card reveal-item" role="listitem">
           <div class="achievement-icon" aria-hidden="true">🤖</div>
           <div class="achievement-text">
             <h4>Multi-Agent AI Systems with CrewAI</h4>
@@ -627,7 +656,7 @@
           </div>
         </div>
 
-        <div class="achievement-card reveal-item">
+        <div class="achievement-card reveal-item" role="listitem">
           <div class="achievement-icon" aria-hidden="true">🧠</div>
           <div class="achievement-text">
             <h4>Practical Multi AI Agents with CrewAI</h4>
@@ -636,7 +665,12 @@
           </div>
         </div>
 
-      </div><!-- /certs-grid -->
+        </div><!-- /certs-grid -->
+
+        <button class="certs-nav certs-next" type="button" aria-label="Scroll certifications right">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div><!-- /certs-carousel -->
 
 
       <!-- ================================================

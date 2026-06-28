@@ -71,4 +71,34 @@
     });
     revealObserver.observe(group);
   });
+
+  /* Lazy-load + play the About video only when it scrolls into view.
+     Respects reduced-motion: source still loads (poster shows) but never plays. */
+  var aboutVideo = document.getElementById('about-video');
+  if (aboutVideo) {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var loaded = false;
+    var videoObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          var v = entry.target;
+          if (entry.isIntersecting) {
+            if (!loaded) {
+              var src = v.querySelector('source[data-src]');
+              if (src) { src.src = src.dataset.src; v.load(); }
+              loaded = true;
+            }
+            if (!reduce) {
+              var p = v.play();
+              if (p && p.catch) p.catch(function () {});
+            }
+          } else if (!v.paused) {
+            v.pause();
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+    videoObserver.observe(aboutVideo);
+  }
 })();

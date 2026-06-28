@@ -340,17 +340,17 @@ section {
 
 @media (max-width: 900px) {
   .container {
-    width: calc(100% - 75px);
-    margin-top: 120px;
-    padding: 10px;
+    width: calc(100% - 40px);
+    margin-top: 92px;
+    padding: 14px;
   }
 }
 
 @media (max-width: 380px) {
   .container {
-    width: 100%;
-    margin-top: 80px;
-    padding: 10px;
+    width: calc(100% - 16px);
+    margin-top: 84px;
+    padding: 12px;
   }
 }
 
@@ -381,16 +381,55 @@ section {
   @media (max-width: 900px) {
     header {
       top: 10px;
-      width: calc(100% - 40px);
-      flex-direction: column;
-      padding: 16px 20px;
+      left: 20px;
+      right: 20px;
+      width: auto;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
     }
+
+    /* Show the hamburger, collapse the nav into a dropdown panel */
+    .nav-toggle { display: flex; }
+
     header ul {
-      margin-top: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      right: 0;
+      margin: 0;
+      padding: 8px;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 2px;
+      z-index: 100;
+      background: #0a0a16;
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: var(--r-lg);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+      /* closed by default */
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: opacity .25s var(--ease), transform .25s var(--ease), visibility .25s var(--ease);
     }
-    header ul li { margin: 3px; }
+
+    header.nav-open ul {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    header ul li { margin: 0; width: 100%; }
+
+    header ul li a {
+      display: block;
+      width: 100%;
+      padding: 13px 16px;
+      font-size: 0.95rem;
+      border-radius: 12px;
+    }
   }
 }
 
@@ -412,12 +451,9 @@ section {
 
 @media (max-width: 380px) {
   header {
-    position: relative;
-    top: -120px;
-    right: 0; left: 0;
-    width: 100%;
-    flex-direction: column;
-    padding: 16px;
+    left: 12px;
+    right: 12px;
+    padding: 9px 12px;
   }
 }
 
@@ -475,6 +511,40 @@ header ul li a.active {
   background: rgba(124,58,237,0.25);
   border: 1px solid rgba(124,58,237,0.35);
 }
+
+/* ── Hamburger toggle (mobile only) ── */
+.nav-toggle {
+  display: none;               /* shown only ≤900px */
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.nav-toggle:hover { background: rgba(255,255,255,0.08); }
+
+.nav-toggle-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 0 auto;
+  border-radius: 2px;
+  background: var(--text);
+  transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
+}
+
+/* Animate bars into an "X" when the menu is open */
+header.nav-open .nav-toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+header.nav-open .nav-toggle-bar:nth-child(2) { opacity: 0; }
+header.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ============================================================
    HERO BADGE
@@ -788,16 +858,25 @@ header ul li a.active {
 /* ============================================================
    HERO IMAGE
    ============================================================ */
-.img img:not(.shape) {
+.img img:not(.shape),
+.img video {
   max-height: 480px;
   max-width: 380px;
   filter: drop-shadow(0 20px 60px rgba(124,58,237,0.3));
 }
 
-/* Show + size the hero photo and About gif on tablet/mobile (were hidden) */
+/* The About animation is a square clip — round its corners to match the design */
+.about-video {
+  width: 100%;
+  height: auto;
+  border-radius: var(--r-lg);
+}
+
+/* Show + size the hero photo and About video on tablet/mobile (were hidden) */
 @media (max-width: 1100px) {
   .img { min-width: 0; }
-  .img img:not(.shape) {
+  .img img:not(.shape),
+  .img video {
     display: block;
     max-width: min(300px, 72vw);
     max-height: none;
@@ -1521,26 +1600,126 @@ header ul li a.active {
    ============================================================ */
 .achievements-div {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  /* min(100%, 260px) floor: stays fluid but never forces a column wider than
+     the screen, so cards can't overflow horizontally on very narrow phones. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: 1.1rem;
   margin-top: 28px;
   width: 100%;
+}
+
+/* ── Certifications: horizontal scroll-snap carousel ── */
+.certs-carousel {
+  position: relative;
+  width: 100%;
+  margin-top: 28px;
 }
 
 .certifications-div {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  align-items: stretch;            /* equal-height cards per row */
   gap: 1.1rem;
-  margin-top: 28px;
   width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scroll-padding-left: 4px;
+  padding: 6px 4px 16px;           /* breathing room + space for scrollbar */
+  -webkit-overflow-scrolling: touch;
+  /* Fade the cards as they reach either edge — signals "more to scroll" */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 3.5%, #000 96.5%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, #000 3.5%, #000 96.5%, transparent 100%);
+  /* Firefox scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--purple) rgba(255,255,255,0.05);
 }
 
-@media (max-width: 900px) {
-  .certifications-div { grid-template-columns: repeat(2, 1fr); }
+.certifications-div:focus-visible {
+  outline: 2px solid var(--purple-l);
+  outline-offset: 4px;
+  border-radius: var(--r);
 }
 
-@media (max-width: 600px) {
-  .certifications-div { grid-template-columns: 1fr; }
+/* WebKit scrollbar */
+.certifications-div::-webkit-scrollbar { height: 6px; }
+.certifications-div::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+}
+.certifications-div::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--purple), var(--cyan));
+  border-radius: 10px;
+}
+
+/* Each cert becomes a fixed-width snap target */
+.certifications-div .achievement-card {
+  flex: 0 0 clamp(250px, 80vw, 330px);
+  scroll-snap-align: start;
+}
+
+/* Floating prev/next controls (desktop / pointer devices only) */
+.certs-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(15, 15, 32, 0.88);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--text);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+  transition: background var(--dur) var(--ease), transform var(--dur) var(--ease),
+              opacity var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.certs-nav svg { width: 20px; height: 20px; }
+.certs-prev { left: -10px; }
+.certs-next { right: -10px; }
+
+.certs-nav:hover {
+  background: var(--purple);
+  border-color: rgba(124,58,237,0.6);
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* Hidden at the track ends (JS toggles [disabled]) */
+.certs-nav[disabled] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Touch devices swipe — no need for arrows */
+@media (hover: none) {
+  .certs-nav { display: none; }
+}
+
+/* Compact the achievement cards on small phones */
+@media (max-width: 480px) {
+  .achievements-div {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    margin-top: 20px;
+  }
+  .achievement-card {
+    padding: 1.1rem 1.15rem;
+    gap: 0.8rem;
+  }
+  .achievement-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1.4rem;
+  }
+  .achievement-text h4 { font-size: 0.95rem; }
+  .achievement-text p  { font-size: 0.86rem; }
 }
 
 .achievement-card {
@@ -1601,6 +1780,12 @@ header ul li a.active {
   background: rgba(124,58,237,0.18);
 }
 
+.achievement-text {
+  /* Let the text column shrink so a long heading wraps instead of squeezing
+     the fixed-size icon next to it. */
+  min-width: 0;
+}
+
 .achievement-text h4 {
   font-family: var(--font-h);
   font-size: 1rem;
@@ -1608,6 +1793,7 @@ header ul li a.active {
   color: var(--text);
   margin-bottom: 0.3rem;
   line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
 .achievement-text p {
